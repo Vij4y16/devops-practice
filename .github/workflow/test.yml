@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - main  # Runs only when pushing to the main branch
-      - dev   # (Optional) Add more branches if needed
-  pull_request:  # Runs on pull requests as well
-    branches:
-      - main
 
 jobs:
   test:
