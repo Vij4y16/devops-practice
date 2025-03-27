@@ -1,0 +1,24 @@
+name: Test Workflow  # Name of the workflow
+
+on:
+  push:
+    branches:
+      - main  # Runs only when pushing to the main branch
+      - dev   # (Optional) Add more branches if needed
+  pull_request:  # Runs on pull requests as well
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Specifies the runner
+
+    steps:
+      - name: Checkout Code  # Step 1: Pulls the repository code
+        uses: actions/checkout@v2
+
+      - name: Run a Test  # Step 2: Executes a command
+        run: echo "Hello from GitHub Actions"
+
+      - name: Verify Current Branch  # Step 3: Show branch info
+        run: git branch --show-current
